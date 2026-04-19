@@ -1,0 +1,275 @@
+{
+  "personal": {
+    "nombres": ["César Aarón Perales Rosales"],
+    "tagline": "Computer Science Student & Systems Architect",
+    "descripcionCorta": "Computer Science undergraduate specializing in algorithmic optimization, systems design, and computational graphics. Dedicated to architecting scalable solutions and disseminating complex technical concepts through academic instruction.",
+    "fotoPerfil": "/perfil.jpg",
+    "contactMeButton": "Contact Me",
+    "downloadCVButton": "Download CV"
+  },
+  "sobreMi": {
+    "mision": "My objective is to bridge the gap between theoretical computer science and practical application to engineer efficient, scalable systems, while simultaneously fostering intellectual growth in others through mentorship and innovative technical development.",
+    "parrafos": [
+      "I am a Computer Science student at UTEC with a rigorous foundation in algorithms, data structures, and software architecture. My academic and professional focus lies at the intersection of theoretical computation and practical system implementation, with a specialization in computational graphics and simulation modeling.",
+      "In addition to software engineering, I actively serve as a Teaching Assistant and private instructor, guiding students through advanced topics such as algorithm analysis, complex data structures, and system design. I advocate for a constructionist learning methodology; my portfolio evidences this through projects ranging from physics simulators to comprehensive full-stack architectures."
+    ],
+    "enseñanza": "Instruction serves as a mechanism to solidify theoretical mastery. In my capacity as a Teaching Assistant for Data Structures & Algorithms at UTEC, I have developed pedagogical methodologies to render abstract concepts tangible through visualization and interactive demonstrations."
+  },
+  "educacion": [
+    {
+      "institucion": "Universidad de Ingeniería y Tecnología (UTEC)",
+      "grado": "B.S. in Computer Science (In Progress)",
+      "periodo": "2023 - Present",
+      "ubicacion": "Lima, Peru",
+      "logros": [
+        "Upper Fifth (Top 20%) - GPA: 3.8/4.0",
+        "Distinguished Project: Algorithmic optimization for map allocation utilizing CGAL"
+      ]
+    }
+  ],
+  "experiencia": {
+    "titulo": "Professional Trajectory",
+    "docenciaTitulo": "Academic Instructer",
+    "trabajosTitulo": "Professional Experience",
+    "docencia": [
+      {
+        "id": "caps",
+        "empresa": "CAPS - UTEC",
+        "cargo": "Private Instructor / Academic Tutor",
+        "periodo": "January 2025 - December 2025",
+        "descripcion": "Provided specialized instruction to students in programming and web development, both within the CAPS framework and independently. Focused on establishing an inclusive, rigorous learning environment, tailoring pedagogical strategies to individual student requirements.",
+        "logo": "https://static.wixstatic.com/media/2d543e_fb5ff8f60e094a4aa5a200d16a7b3cf5~mv2.png/v1/fill/w_282,h_218,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CAPS.png",
+        "stack": ["Algorithm Design", "Python", "Database Systems"],
+        "hitos": [
+          "Developed comprehensive curricular materials for programming advisory sessions.",
+          "Expanded student base significantly through peer recommendations and academic results."
+        ]
+      },
+      {
+        "id": "superprof",
+        "empresa": "FREELANCE",
+        "subtitulo": "<superprof>",
+        "cargo": "Private Instructor",
+        "periodo": "2022 - Present",
+        "descripcion": "Since 2022, I have provided private instruction in programming and web development across various proficiency levels. My methodology centers on adapting curricula to individual learning curves, fostering both theoretical understanding and practical application.",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-tgUHvmTrZOMI7oLXBkPAUieru7eaC8qeQ&s",
+        "stack": ["Python", "Advanced Algorithms", "Data Structures", "Computer Graphics"],
+        "hitos": [
+          "Successfully mentored over 50 students.",
+          "Designed personalized study plans tailored to specific academic goals.",
+          "Maintained a high retention rate and student satisfaction score."
+        ]
+      }
+    ],
+    "trabajos": [
+      {
+        "empresa": "BenjiOr",
+        "cargo": "Software Developer",
+        "periodo": "2023 - 2025",
+        "descripcion": "Engineered multiple web, desktop, and mobile solutions for enterprise use, including a comprehensive inventory and sales management system.",
+        "stack": ["JavaScript", "HTML/CSS", "Python", "Flask", "SQLite"],
+        "hitos": [
+          "Architected a full-stack inventory and sales management system.",
+          "Optimized system performance utilizing advanced programming paradigms.",
+          "Developed cross-platform desktop and mobile applications to meet business requirements."
+        ]
+      },
+      {
+        "empresa": "Mastery Five",
+        "cargo": "Full Stack Developer",
+        "periodo": "2023 - 2024",
+        "descripcion": "Contributed to the full-stack development lifecycle of a productivity and time-management software suite.",
+        "logo": "assets/images/projects/logo-masteryfive.svg",
+        "stack": ["Next.js", "Tailwind CSS", "Google Cloud"],
+        "hitos": [
+          "Developed core modules for time management and productivity tracking.",
+          "Implemented a real-time notification architecture.",
+          "Engineered reusable, scalable frontend components using Next.js."
+        ]
+      },
+      {
+        "empresa": "Haramara",
+        "cargo": "Full Stack Developer",
+        "periodo": "2024 - 2025",
+        "descripcion": "Developed a web application for the reservation, purchase, and sale of aquatic activities.",
+        "stack": ["Next.js", "Node.js", "Tailwind CSS", "OVH Cloud"],
+        "hitos": [
+          "Implemented a robust booking and reservation system.",
+          "Designed a complex, responsive front-end interface using Next.js.",
+          "Integrated a User-Enterprise model for activity management."
+        ]
+      },
+      {
+        "empresa": "Cults - Sketchfab",
+        "cargo": "3D Modeler",
+        "periodo": "2021 - 2022",
+        "descripcion": "Designed high-fidelity 3D models for the Cults platform, optimized for both 3D printing and real-time online visualization.",
+        "logo": "assets/images/projects/cults_logo.png",
+        "stack": ["Blender", "Cults3D", "Sketchfab"],
+        "hitos": [
+          "Created commercial-grade 3D assets for the Cults platform.",
+          "Optimized topology for additive manufacturing (3D printing) and web rendering.",
+          "Achieved consistent sales volume for various models on the platform."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "lenguajes": [
+      {
+        "name": "Python",
+        "icon": "fab fa-python",
+        "nivel": "Advanced"
+      },
+      {
+        "name": "C++",
+        "icon": "fas fa-code",
+        "nivel": "Advanced"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "fab fa-js",
+        "nivel": "Intermediate"
+      },
+      {
+        "name": "Java",
+        "icon": "fab fa-java",
+        "nivel": "Basic"
+      },
+      {
+        "name": "Next.js/React",
+        "icon": "fab fa-react"
+      },
+      {
+        "name": "Flask",
+        "icon": "fas fa-flask"
+      }
+    ],
+    "sistemas": [
+      {
+        "name": "Data Structures & Algorithms",
+        "icon": "fas fa-project-diagram"
+      },
+      {
+        "name": "Software Architecture",
+        "icon": "fas fa-sitemap"
+      },
+      {
+        "name": "Computer Graphics (OpenGL/WebGL)",
+        "icon": "fas fa-cube"
+      },
+      {
+        "name": "Database Systems (PostgreSQL, SQLite)",
+        "icon": "fas fa-database"
+      },
+      {
+        "name": "Physics Simulation",
+        "icon": "fas fa-atom"
+      }
+    ],
+    "herramientas": [
+      {
+        "name": "Git",
+        "icon": "fab fa-git-alt"
+      },
+      {
+        "name": "Linux/Unix",
+        "icon": "fab fa-linux"
+      },
+      {
+        "name": "Blender",
+        "icon": "fas fa-cube"
+      },
+      {
+        "name": "Godot",
+        "icon": "fas fa-gamepad"
+      }
+    ]
+  },
+  "contacto": {
+    "titulo": "Contact",
+    "subtitulo": "Collaboration & Inquiries",
+    "mensaje": "I am amenable to new professional opportunities and academic collaborations. Please do not hesitate to contact me to discuss potential projects or research initiatives.",
+    "items": [
+      {
+        "titulo": "Email",
+        "contenido": "c.casurpie@gmail.com",
+        "icono": "fas fa-envelope"
+      },
+      {
+        "titulo": "Phone",
+        "contenido": "+51 988 770 244",
+        "icono": "fas fa-phone"
+      },
+      {
+        "titulo": "Location",
+        "contenido": "Lima, Peru",
+        "icono": "fas fa-map-marker-alt"
+      },
+      {
+        "titulo": "Availability",
+        "contenido": "Monday to Friday, 9:00 - 22:00",
+        "icono": "fas fa-clock"
+      }
+    ],
+    "formulario": {
+      "campos": [
+        {
+          "id": "nombre",
+          "label": "Name",
+          "tipo": "text",
+          "placeholder": "Your Name"
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "tipo": "email",
+          "placeholder": "your@email.com"
+        },
+        {
+          "id": "asunto",
+          "label": "Subject",
+          "tipo": "text",
+          "placeholder": "Subject of inquiry"
+        },
+        {
+          "id": "mensaje",
+          "label": "Message",
+          "tipo": "textarea",
+          "placeholder": "Type your message here..."
+        }
+      ],
+      "botonTexto": "Send Message",
+      "botonIcono": "fas fa-paper-plane"
+    }
+  },
+  "footer": {
+    "nombre": "César Perales | CdeCasurpie",
+    "descripcion": "César Perales: Programmer and educator dedicated to engineering memorable digital experiences and disseminating knowledge.",
+    "copyright": "César Perales | All Rights Reserved",
+    "fraseFooter": "Engineered with passion and precision.",
+    "redesTitulo": "Let's Connect"
+  },
+  "social": [
+    {
+      "nombre": "GitHub",
+      "url": "https://github.com/CdeCasurpie",
+      "icono": "fab fa-github"
+    },
+    {
+      "nombre": "LinkedIn",
+      "url": "https://www.linkedin.com/in/cesar-aaron-perales-rosales-469142292/",
+      "icono": "fab fa-linkedin"
+    },
+    {
+      "nombre": "Instagram",
+      "url": "https://instagram.com/cesar_perales_20/",
+      "icono": "fab fa-instagram"
+    },
+    {
+      "nombre": "Tiktok",
+      "url": "https://www.tiktok.com/@causa_code",
+      "icono": "fab fa-tiktok"
+    }
+  ]
+}

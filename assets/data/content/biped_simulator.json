@@ -1,0 +1,64 @@
+{
+    "type": "uploaded file",
+    "fileName": "biped_simulator.json",
+    "fullContent": {
+        "title": "Bipedal Physics Simulator",
+        "author": "César Perales",
+        "date": "March 26, 2025",
+        "skills": ["Pygame", "Physics Simulation", "Inverse Kinematics", "Procedural Animation"],
+        "repoUrl": "https://github.com/CdeCasurpie/Biped-Simulator-Python",
+        "content": [
+            {
+                "type": "header",
+                "level": 2,
+                "content": "General Description"
+            },
+            {
+                "type": "text",
+                "content": "This project implements a bipedal physics simulator that integrates fundamental physical principles with inverse kinematics algorithms to synthesize a procedural locomotion model. The system utilizes a mass-spring simulation for somatic control, facilitating realistic limb articulation through precise mathematical computation."
+            },
+            {
+                "type": "image",
+                "url": "/assets/images/projects/gif_biped.gif",
+                "alt": "Overview of the biped simulator",
+                "caption": "Real-time simulation of a biped featuring realistic physics."
+            },
+            {
+                "type": "header",
+                "level": 2,
+                "content": "System Architecture"
+            },
+            {
+                "type": "text",
+                "content": "The project is structured into autonomous modules managing distinct simulation facets. The core module ('core.py') implements fundamental classes, such as Point and PhysicalPoint, which govern basic physics. The 'spring.py' module provides the implementation of spring constraints, whereas 'biped.py' encapsulates specific bipedal logic and inverse kinematics for realistic crural movement."
+            },
+            {
+                "type": "code",
+                "language": "python",
+                "content": "def inverse_kinematics(self, hip, foot, upper_length, lower_length, target=Point(0, 0)):\n    # Calculates the knee position using circle intersection\n    intersections = get_intersections_of_circles(hip, foot, upper_length, lower_length)\n    \n    if intersections[0] is None:\n        return Point((hip.x + foot.x) / 2, (hip.y + foot.y) / 2)\n    \n    p1, p2 = intersections\n    \n    # Selects the intersection closest to the target point\n    if p1.distance(target) < p2.distance(target):\n        return p1\n    else:\n        return p2"
+            },
+            {
+                "type": "header",
+                "level": 2,
+                "content": "Key Features"
+            },
+            {
+                "type": "text",
+                "content": "The simulator incorporates a realistic physics engine featuring gravity, damping, and collision detection. The inverse kinematics module automates the calculation of articular coordinates to maintain natural limb posture. An adaptive stepping system dynamically modulates step height and stride length relative to velocity, ensuring fluid locomotion across varying speeds."
+            },
+            {
+                "type": "text",
+                "content": "The Biped class implements a comprehensive simulation grounded in biomechanical concepts, where the hip functions as a physical point connected to an upper anchor via a spring, while the legs utilize inverse kinematics to calculate knee and foot positions. The stability system continuously monitors the center of mass relative to the stance width, adjusting foot placement to maintain equilibrium."
+            },
+            {
+                "type": "header",
+                "level": 2,
+                "content": "Conclusions"
+            },
+            {
+                "type": "text",
+                "content": "The biped simulator represents an advanced synthesis of physics and procedural animation to generate realistic locomotion models. This project not only demonstrates the capacity to simulate complex biomechanical movements but also provides a robust foundation for future research in robotics and digital animation."
+            }
+        ]
+    }
+}

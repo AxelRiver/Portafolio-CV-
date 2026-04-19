@@ -1,0 +1,164 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "title": "Multimodal Database Management System",
+            "date": "May 26, 2024",
+            "skills": [
+                "Python",
+                "Database Systems",
+                "PyQt GUI"
+            ],
+            "excerpt": "A comprehensive database system engineered from scratch, implementing five distinct indexing structures (including Sequential File and Extended Hashing). Features both a Command Line Interface (CLI) and a Graphical User Interface (GUI) for query execution and data export to JSON/CSV formats.",
+            "jsonFile": "database_system.json",
+            "coverImage": "/assets/images/projects/base_datos_multi.png"
+        },
+        {
+            "id": "5",
+            "title": "Procedural Feline Locomotion in Godot",
+            "date": "May 04, 2025",
+            "skills": [
+                "Godot",
+                "Procedural Animation",
+                "Game Development",
+                "3D Modeling"
+            ],
+            "excerpt": "A procedural animation project developed within the Godot Engine, simulating realistic feline kinematics and naturalistic behaviors through programmatic implementation rather than pre-baked assets.",
+            "jsonFile": "procedural_cat.json",
+            "coverImage": "/assets/images/projects/coverGato.png"
+        },
+        {
+            "id": "9",
+            "title": "Particle Life Simulation",
+            "date": "May 18, 2024",
+            "skills": [
+                "Python",
+                "Physics Simulation",
+                "Cellular Automata",
+                "Web Technologies",
+                "Complex Systems"
+            ],
+            "excerpt": "An artificial life simulation modeling emergent complex systems through particle interaction. Implements attraction/repulsion laws within a matrix to demonstrate self-organizing behaviors.",
+            "jsonFile": "particle_life.json",
+            "coverImage": "/assets/images/projects/particle_life.png"
+        },
+        {
+            "id": "11",
+            "title": "P&R Architects - Corporate Web Portal",
+            "date": "December 15, 2024",
+            "skills": [
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Responsive Design",
+                "UI/UX"
+            ],
+            "excerpt": "A professional corporate web portal designed for an architectural firm with two decades of industry presence. Features include a dynamic carousel, modal-based project management, a thematic styling system, and seamless WhatsApp integration.",
+            "jsonFile": "pyr_arquitectos.json",
+            "coverImage": "/assets/images/projects/pyr_coverImage.png"
+        },
+        {
+            "id": "10",
+            "title": "Rinder - AI-Driven Matchmaking Platform",
+            "date": "June 12, 2024",
+            "skills": [
+                "Python",
+                "Flask",
+                "React",
+                "Next.js",
+                "TensorFlow",
+                "Machine Learning"
+            ],
+            "excerpt": "An innovative dating platform utilizing neural networks for intelligent user matchmaking. Architected as a Flask monolith, featuring experimental frontend implementations in Vue.js and a demonstration interface built with React/Next.js.",
+            "jsonFile": "rinder.json",
+            "coverImage": "/assets/images/projects/coverRinder.png"
+        },
+        {
+            "id": "13",
+            "title": "CulqiPay - Zero-Cost Payment Gateway Implementation",
+            "date": "December 19, 2024",
+            "skills": [
+                "Next.js",
+                "TypeScript",
+                "Supabase",
+                "Culqi API",
+                "Tailwind CSS"
+            ],
+            "excerpt": "A fully functional e-commerce platform engineered using exclusively open-source and free-tier tools. Implements secure authentication, product catalog management, and payment processing via the Culqi API, deployed via GitHub Pages.",
+            "jsonFile": "culqipay.json",
+            "coverImage": "/assets/images/projects/coverCulqiPay.png"
+        },
+        {
+            "id": "12",
+            "title": "Graph Organizer - Hierarchical Graph Editor",
+            "date": "December 18, 2024",
+            "skills": [
+                "JavaScript",
+                "HTML5",
+                "Canvas API",
+                "Graph Theory",
+                "UI/UX"
+            ],
+            "excerpt": "An interactive web application for constructing nested hierarchical graphs. Enables nodes to encapsulate internal subgraphs, facilitating the organization of complex workflows, curriculum dependencies, or software architecture.",
+            "jsonFile": "graph_organizer.json",
+            "coverImage": "/assets/images/projects/graphEditorMain.png"
+        },
+        {
+            "id": "3",
+            "title": "AI-Powered Report Generator",
+            "date": "November 25, 2024",
+            "skills": [
+                "Python",
+                "AI",
+                "Flask",
+                "React"
+            ],
+            "excerpt": "A comprehensive system for automated report generation utilizing Artificial Intelligence. Features a Python/Flask backend for image processing and document synthesis, paired with a modern frontend interface.",
+            "jsonFile": "ai_report_generator.json",
+            "coverImage": "/assets/images/projects/gpt_generator.png"
+        },
+        {
+            "id": "2",
+            "title": "3D Planetary Visualizer",
+            "date": "October 10, 2024",
+            "skills": [
+                "WebGL",
+                "Three.js",
+                "NASA API",
+                "3D Graphics",
+                "Frontend",
+                "Backend"
+            ],
+            "excerpt": "A web-based 3D visualization tool rendering planetary bodies utilizing NASA API data. Features a full-stack architecture designed for the real-time rendering and visualization of astronomical datasets.",
+            "jsonFile": "planet_visualizer.json",
+            "coverImage": "/assets/images/projects/sun_plantets.png"
+        },
+        {
+            "id": "4",
+            "title": "Bipedal Physics Simulator",
+            "date": "March 26, 2025",
+            "skills": [
+                "Pygame",
+                "Physics Simulation",
+                "Procedural Animation"
+            ],
+            "excerpt": "An advanced physics simulation focusing on bipedal locomotion using procedural animation techniques. Implements rigid body physics and biomechanical constraints using the Pygame library.",
+            "jsonFile": "biped_simulator.json",
+            "coverImage": "/assets/images/projects/biped_sim.png"
+        },
+        {
+            "id": "6",
+            "title": "Music Similarity Search Engine",
+            "date": "September 12, 2024",
+            "skills": [
+                "C++",
+                "Clustering",
+                "Data Visualization",
+                "Algorithmic Metrics"
+            ],
+            "excerpt": "Implementation of high-dimensional similarity search algorithms applied to Spotify datasets. Includes visualization of performance metrics and a query engine for identifying stylistically similar musical compositions.",
+            "jsonFile": "music_similarity.json",
+            "coverImage": "/assets/images/projects/diversify_busqueda.png"
+        }
+    ]
+}

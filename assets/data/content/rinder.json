@@ -1,0 +1,90 @@
+{
+    "title": "Rinder: A Web-Based Social Connection Platform",
+    "author": "César Perales, Isabella Romero, Gianpier Segovia",
+    "date": "June 12, 2024",
+    "skills": ["Python", "Flask", "React", "Next.js", "Vue.js", "PostgreSQL"],
+    "repoUrl": "https://github.com/CesarAP24/Rinder",
+    "demoUrl": "https://cdecasurpie.github.io/Rinder/",
+    "coverImage": "/assets/images/projects/coverRinder.png",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Overview"
+        },
+        {
+            "type": "text",
+            "content": "Rinder is a full-stack web application designed for social discovery and dating, architected using Python and the Flask framework. Developed as a collaborative academic project, the platform implements core functionalities essential to social networking, including user profiling, mutual-interest matching algorithms, real-time messaging, and content distribution systems."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Architecture"
+        },
+        {
+            "type": "text",
+            "content": "The system was initially engineered as a monolithic architecture using Flask for both server-side logic and template rendering. To evolve the platform, we conducted an experimental migration to Vue.js to decouple the frontend. The current public demonstration utilizes a Next.js (React) fork integrated with simulated datasets for high-performance client-side rendering."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Backend Implementation (Flask + PostgreSQL)"
+        },
+        {
+            "type": "text",
+            "content": "The backend manages complex relational data and implements a comprehensive RESTful API for CRUD operations:\n\n- CREATE: User registration, post publication, asynchronous messaging, and preference signaling.\n- READ: Dynamic profile retrieval, match visualization, messaging history, and social feeds.\n- UPDATE: Profile management and real-time preference adjustments.\n- DELETE: Account deactivation and content removal.\n\nPostgreSQL serves as the primary relational database, ensuring data integrity across user entities, matches, and communication logs."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Core Functionalities"
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/Captura de pantalla_20251217_163626.png",
+            "alt": "Matching System Interface",
+            "caption": "Matching Algorithm Interface"
+        },
+        {
+            "type": "text",
+            "content": "Matching Subsystem: A high-fidelity interface where users evaluate peer profiles. The system monitors reciprocal preference signals to trigger 'Match' events."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/Captura de pantalla_20251217_163823.png",
+            "alt": "Messaging Interface",
+            "caption": "Messaging Subsystem"
+        },
+        {
+            "type": "text",
+            "content": "Communication Subsystem: A secure chat environment for matched users, featuring message persistence, historical retrieval, and notification triggers."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Account Tiering and Monetization Logic"
+        },
+        {
+            "type": "text",
+            "content": "The application features a tiered service model with specific constraint management:\n\n- Free: Standard access with interaction limits and advertisement integration.\n- Premium: Enhanced daily interaction thresholds and an ad-free experience.\n- VIP: Unlimited interactions, ad-free environment, and advanced analytics, such as profile visit tracking."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Stack"
+        },
+        {
+            "type": "text",
+            "content": "- Backend: Python, Flask, SQLAlchemy (ORM)\n- Database: PostgreSQL (Port 5432)\n- Primary Frontend: Jinja2 Templates\n- Experimental Frontend: Vue.js\n- Demonstration Layer: React/Next.js\n- Authentication: Session-based security management via Flask"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "content": "Rinder represents a fundamental milestone in full-stack engineering, demonstrating proficiency in relational database management, collaborative version control, and the implementation of secure authentication protocols within a distributed team environment."
+        }
+    ]
+}

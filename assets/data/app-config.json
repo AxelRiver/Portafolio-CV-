@@ -1,0 +1,58 @@
+{
+  "theme": {
+    "default": "dark",
+    "cursorEffect": true
+  },
+  "navbar": {
+    "logoText": "COMPUTER SCIENTIST | SYSTEMS ENGINEER",
+    "links": [
+      { "id": "home", "text": "Home", "path": "/#home" },
+      { "id": "about", "text": "About", "path": "/#about" },
+      { "id": "projects", "text": "Projects", "path": "/#projects" },
+      { "id": "experience", "text": "Experience", "path": "/#experience" },
+      { "id": "contacto", "text": "Contact", "path": "/#contacto" }
+    ]
+  },
+  "scrollNarrative": [
+    {
+      "id": "intro",
+      "start": 0.0, 
+      "end": 0.3,
+      "text": [
+        ""
+      ]
+    },
+    {
+      "id": "about",
+      "start": 0.45,
+      "end": 0.9,
+      "text": [
+        "ABOUT ME",
+        "I am César Perales, a Computer Science scholar.",
+        "Synthesizing theoretical design and technology to",
+        "engineer innovative computational solutions,",
+        "specializing in scalable system architectures",
+        "and high-fidelity physical simulations."
+      ]
+    },
+    {
+      "id": "projects",
+      "start": 1.5,
+      "end": 2.0,
+      "text": [
+        "SELECTED PROJECTS",
+        "Modular systems architecture",
+        "and high-efficiency algorithmic optimization.",
+        "From computational geometry libraries",
+        "to advanced mechanics within game engines",
+        "and automated instrumentation tools."
+      ]
+    }
+  ],
+  "footer": {
+    "copyrightText": "© 2026 César Perales. Engineered with precision and dedication.",
+    "sections": [
+      { "title": "Navigation", "links": ["home", "projects", "about"] }
+    ]
+  }
+}

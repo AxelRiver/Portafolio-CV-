@@ -1,0 +1,130 @@
+{
+    "title": "Procedural Feline: Advanced Quadrupedal Animation System",
+    "author": "César Perales",
+    "date": "May 04, 2025",
+    "skills": ["Godot Engine", "GDScript/Python", "Procedural Animation", "Inverse Kinematics", "Physics Simulation", "Finite State Machines", "3D Mathematics", "Game Development"],
+    "repoUrl": "https://github.com/CesarAP24/cat_proj_test03",
+    "demoUrl": "https://cesarap24.github.io/cat_proj_test03/",
+    "coverImage": "/assets/images/projects/coverGato.png",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Overview"
+        },
+        {
+            "type": "text",
+            "content": "This project implements a comprehensive procedural animation system for a quadrupedal feline within the Godot Engine. The architecture integrates advanced Inverse Kinematics (IK) algorithms, complex Finite State Machines (FSM), and rigid-body physics simulations to generate natural and realistic movement without relying on pre-rendered animation clips."
+        },
+        {
+            "type":"image",
+            "url": "/assets/images/projects/Captura de pantalla_20251217_165400.png",
+            "alt": "Procedural feline photo gallery",
+            "caption": "Rendered instances of the procedural feline showcasing various poses and dynamically generated movements."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/cat_animation.gif",
+            "alt": "Procedural feline demonstration",
+            "caption": "The procedural agent navigating irregular terrain with real-time gait adaptation."
+        },
+        {
+            "type": "text",
+            "content": "The project is supported by extensive documentation and a dedicated web portal demonstrating system functionality, as well as a public repository containing the full source code and assets for peer review and implementation studies."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/Captura de pantalla_20251217_165212.png",
+            "alt": "Project documentation",
+            "caption": "Detailed technical documentation of the feline's procedural animation framework."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Locomotion System Architecture"
+        },
+        {
+            "type": "text",
+            "content": "The system core is driven by a sophisticated state machine that governs the quadrupedal gait cycle. The framework manages eight distinct states: STEP_1 through STEP_5, JUMP_PREP, JUMP, and LANDING, each handling specific kinematic phases of locomotion."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "enum State { STEP_1, STEP_2, STEP_3, STEP_4, STEP_5, JUMP_PREP, JUMP, LANDING }\n\nfunc update_fsm():\n    # Trigger jump sequence if necessary\n    if should_advance() and not in_jump_cycle and jump_required():\n        in_jump_cycle = true\n        change_state(State.JUMP_PREP)\n        return\n    \n    # Manage jump states and walking transitions\n    if in_jump_cycle:\n        match current_state:\n            State.JUMP_PREP:\n                if all_legs_in_position(): change_state(State.JUMP)"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Terrain Awareness and Adaptation Subsystem"
+        },
+        {
+            "type": "text",
+            "content": "A prominent feature of the system is its autonomous environmental awareness. Utilizing advanced raycasting arrays, the system analyzes ground topography to determine necessary gait adjustments or trigger leaping sequences when obstacles are detected."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "func jump_required():\n    var center = get_center()\n    var dir_norm = direction.normalized()\n    \n    for dist in range(1, 30):\n        var current_dist = JUMP_DETECTION_THRESHOLD * dist / 30.0\n        var check_point = center + dir_norm * current_dist\n        var terrain_height = get_highest_point(check_point.x, check_point.z, \"ground\").y\n        var height_diff = terrain_height - center.y\n        \n        # Detect both elevation gains and drops\n        if height_diff > MIN_HEIGHT_JUMP && height_diff < MAX_HEIGHT_JUMP:\n            obstacle_position = Vector3(check_point.x, terrain_height, check_point.z)\n            return true"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Inverse Kinematics and Skeletal Control"
+        },
+        {
+            "type": "text",
+            "content": "The rigging framework employs advanced IK to articulate the feline's spinal column and limbs. A physical spring-damper system is integrated to simulate the organic movement of the cranium and cervical vertebrae, producing an inertial response that mirrors natural momentum."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "func update_column(skeleton: Skeleton3D, bones: Array, target: Vector3, delta: float):\n    # Spring-Damper Physics Simulation\n    var desired_pos = target\n    var current_pos = current_head_pos\n    \n    # Calculate spring force: F = -k * x - b * v\n    var displacement = current_pos - desired_pos\n    var spring_force = -spring_stiffness * displacement - spring_damping * velocity\n    \n    # Calculate acceleration (F = ma, thus a = F/m)\n    var acceleration = spring_force / mass\n    \n    # Update velocity and position via integration\n    velocity += acceleration * delta\n    current_head_pos += velocity * delta"
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/cat_targets.png",
+            "alt": "Feline target and IK system",
+            "caption": "Visualization of the Inverse Kinematics target system."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Interpolation Algorithms and Motion Smoothing"
+        },
+        {
+            "type": "text",
+            "content": "The framework utilizes multiple interpolation algorithms to ensure fluid transitions between spatial coordinates. Sigmoid functions are employed for motion dampening, while parabolic trajectories govern the natural elevation of limbs during the gait swing phase."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "func get_sigmoid_progress(x):\n    return 1 / (1 + exp(-8 * (x - 0.5)))\n\nfunc calculate_parabolic_height(start_pos, end_pos, progress, height_factor = 1.0):\n    var y_start = start_pos.y\n    var y_end = end_pos.y\n    var max_height = max(y_start, y_end) + (STEP_HEIGHT * height_factor)\n    \n    var a = y_start + y_end - 2 * max_height\n    var b = -2 * y_start + 2 * max_height\n    var c = y_start\n    \n    return a * progress * progress + b * progress + c"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Advanced Third-Person Camera System"
+        },
+        {
+            "type": "text",
+            "content": "The project includes a sophisticated third-person camera controller featuring movement smoothing, orbital orientation, dynamic zooming, and raycast-based targeting. The camera provides a seamless user experience by responding organically to character movements."
+        },
+        {
+            "type": "text",
+            "content": "Input controls allow for camera-relative movement, orbital rotation via right-click, scroll-based zooming, and left-click raycasting to designate new movement targets on the terrain."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Applications and Research Potential"
+        },
+        {
+            "type": "text",
+            "content": "This architecture has direct applications in the development of high-fidelity quadrupedal NPCs, bio-inspired robotic simulations, and procedural animation toolsets. Its modular design facilitates adaptation for diverse biological structures and environmental scenarios."
+        },
+        {
+            "type": "text",
+            "content": "The codebase provides a robust foundation for the implementation of emergent behaviors and advanced gameplay mechanics requiring organic, adaptive locomotion."
+        }
+    ]
+}

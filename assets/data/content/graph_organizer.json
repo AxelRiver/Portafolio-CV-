@@ -1,0 +1,143 @@
+{
+    "title": "Graph Organizer - Hierarchical Graph Editor",
+    "author": "César Perales",
+    "date": "December 18, 2024",
+    "skills": ["JavaScript", "HTML5", "Canvas API", "Graph Theory", "UI/UX"],
+    "repoUrl": "https://github.com/CdeCasurpie/casurpie-graph-editor",
+    "demoUrl": "https://cdecasurpie.github.io/casurpie-graph-editor/",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Description"
+        },
+        {
+            "type": "text",
+            "content": "Graph Organizer is an interactive web application for creating and managing graphs with nested hierarchies. The system allows each node to contain its own internal subgraph, facilitating the organization of complex workflows, project dependencies, modular courses, or any structure requiring multiple levels of organization."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/graphEditorWelcome.png",
+            "alt": "Graph Organizer Welcome Screen",
+            "caption": "Welcome interface with usage instructions."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Key Features"
+        },
+        {
+            "type": "text",
+            "content": "Hierarchical Graphs: Each node can house a complete subgraph. This enables the creation of multi-level nested structures, ideal for representing complex systems with subsystems."
+        },
+        {
+            "type": "text",
+            "content": "Intuitive Interaction: Control system based on mouse and keyboard inputs. Double-click to create nodes, drag to move, Ctrl + Click to connect nodes, and fluid canvas navigation."
+        },
+        {
+            "type": "text",
+            "content": "Property Editing: Each node can be edited with a simple click, allowing users to modify names, descriptions, and other custom properties."
+        },
+        {
+            "type": "text",
+            "content": "Zoom and Pan System: Comprehensive canvas navigation with mouse wheel zoom and click-and-drag panning."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/graphEditorMain.png",
+            "alt": "Main view of the graph editor",
+            "caption": "Editor in action displaying a multi-level dependency graph."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Use Cases"
+        },
+        {
+            "type": "text",
+            "content": "Course Planning: Organize academic programs where each course has internal modules with their own dependencies and subtopics."
+        },
+        {
+            "type": "text",
+            "content": "Project Management: Structure large projects into subprojects, where each task can contain internal subtasks and dependencies."
+        },
+        {
+            "type": "text",
+            "content": "Workflows: Design complex processes where each step may have its own sub-flow of activities."
+        },
+        {
+            "type": "text",
+            "content": "Modular Programming: Visualize software architectures where each module contains its own components and dependencies."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Application Controls"
+        },
+        {
+            "type": "text",
+            "content": "Create Nodes: Double-click on the canvas to add a new node.\n\nMove Nodes: Drag nodes with the mouse to reposition them.\n\nConnect Nodes: Ctrl + Click on a source node, then Ctrl + Click on a target node to create a connection.\n\nEdit Properties: Single-click on a node to open the editing panel.\n\nCreate Subgraphs: Double-click on a container node to enter its internal subgraph.\n\nZoom: Use the mouse wheel to zoom in or out.\n\nMove View: Drag the canvas to navigate the workspace.\n\nNavigation: Use the back button to return to the parent graph."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Implementation"
+        },
+        {
+            "type": "text",
+            "content": "Canvas API: Complete rendering using HTML5 Canvas for maximum performance and visual flexibility."
+        },
+        {
+            "type": "text",
+            "content": "Data Structure: Nested graph system implemented with JavaScript objects, allowing recursive navigation between levels."
+        },
+        {
+            "type": "text",
+            "content": "Event System: Sophisticated handling of mouse and keyboard events for fluid interactions and state detection (hover, drag, connect)."
+        },
+        {
+            "type": "text",
+            "content": "Persistence: Import/export system for graphs in JSON format to save and load complete projects."
+        },
+        {
+            "type": "code",
+            "language": "javascript",
+            "content": "// Structure of a node with a subgraph\nconst node = {\n    id: 'node-1',\n    title: 'Basic Programming',\n    x: 100,\n    y: 100,\n    connections: ['node-2', 'node-3'],\n    subgraph: {\n        nodes: [\n            { id: 'sub-1', title: 'Variables' },\n            { id: 'sub-2', title: 'Conditionals' },\n            { id: 'sub-3', title: 'Loops' }\n        ],\n        connections: [...]\n    }\n};"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technological Stack"
+        },
+        {
+            "type": "text",
+            "content": "Frontend: HTML5, CSS3, Pure JavaScript (Vanilla JS)\n\nRendering: Canvas API for high-performance 2D graphics\n\nGraph Theory: Implementation of directed graph data structures with nesting support\n\nUI/UX: Intuitive control system with real-time visual feedback"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Export Functionalities"
+        },
+        {
+            "type": "text",
+            "content": "Export Graph: Saves the entire graph structure in JSON format, including all nested subgraphs."
+        },
+        {
+            "type": "text",
+            "content": "Import Graph: Loads previously saved graphs, restoring the entire hierarchy and connections."
+        },
+        {
+            "type": "text",
+            "content": "Clear All: Option to reset the canvas and start a new graph from scratch."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "content": "Graph Organizer is a powerful tool for visualizing and organizing complex hierarchical structures. Its ability to nest graphs within nodes makes it unique for use cases requiring multiple levels of abstraction. The application is fully functional in the browser without installation, and the export system allows for easy project saving and sharing."
+        }
+    ]
+}

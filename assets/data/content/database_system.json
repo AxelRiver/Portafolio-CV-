@@ -1,0 +1,117 @@
+{
+    "title": "Multimodal Database System with Advanced Spatial Indexing Support",
+    "author": "César Perales",
+    "date": "December 18, 2024",
+    "skills": ["Python", "PyQt5", "Advanced Data Structures", "Indexing Algorithms", "Database Systems", "Spatial Processing", "UI Development", "Binary File Handling"],
+    "repoUrl": "https://github.com/Fabryzzio-Meza-Torres/Sistema-de-Base-de-Datos-Multimodal",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Overview"
+        },
+        {
+            "type": "text",
+            "content": "I developed an innovative multimodal database management system, implementing five advanced indexing techniques from the ground up, including comprehensive support for spatial data. This project represents a holistic solution encompassing the implementation of complex data structures, efficient serialization, spatial processing, a custom SQL interface, and an intuitive graphical application developed in PyQt5."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/db-multimodal-gui.png",
+            "alt": "Graphical Interface of the Multimodal Database System",
+            "caption": "Primary system interface featuring the SQL query panel."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Highlights"
+        },
+        {
+            "type": "text",
+            "content": "The system's most distinctive feature is its capability to dynamically switch between five advanced indexing algorithms: B+ Tree, Extendible Hashing, Sequential File with Overflow, Sparse ISAM, and Spatial R-Tree. Each algorithm is implemented with specific optimizations to maximize performance across diverse use cases and data access patterns."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "# Example of table creation with a spatial index\nquery = '''\nCREATE TABLE restaurants (\n    id INT KEY,\n    name VARCHAR(100),\n    location POINT SPATIAL INDEX,\n    rating FLOAT,\n    area POLYGON\n) using index bplus_tree(id);\n'''\n\ndatabase.execute_query(query)"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Innovations in Spatial Indexing"
+        },
+        {
+            "type": "text",
+            "content": "A high-performance spatial indexing system based on R-Trees was implemented to facilitate complex geospatial queries. The system processes four types of spatial queries: radius search, geometric intersections, k-nearest neighbors (k-NN), and rectangular range searches. This functionality enables the handling of complex geometries represented in WKT (Well-Known Text) format for advanced spatial analysis."
+        },
+        {
+            "type": "code",
+            "language": "sql",
+            "content": "-- Radius search: find restaurants within a 5km radius\nSELECT * FROM restaurants WHERE location WITHIN ((10.5, 20.3), 5.0);\n\n-- Geometric intersection search\nSELECT * FROM restaurants WHERE area INTERSECTS \"POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))\";\n\n-- 3-Nearest Neighbors search\nSELECT * FROM restaurants WHERE location NEAREST (0, 0) LIMIT 3;\n\n-- Rectangular spatial range search\nSELECT * FROM restaurants WHERE location IN_RANGE ((0, 0), (10, 10));"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Performance Analysis and Implemented Algorithms"
+        },
+        {
+            "type": "text",
+            "content": "A performance analysis was conducted across the five indexing techniques using datasets of up to 100,000 records. The B+ Tree proved to be the most balanced for general operations, maintaining consistent O(log n) complexity. Extendible Hashing excelled in point insertions and lookups with an average O(1) complexity. While the R-Tree exhibited slower insertion times (18,112ms/record for 100k), it exponentially outperformed other structures in complex spatial queries."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/grafica_db.png",
+            "alt": "Performance comparison chart between indexing techniques",
+            "caption": "Performance comparison of insertion operations across varying data volumes."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Architecture and Design"
+        },
+        {
+            "type": "text",
+            "content": "The system implements a modular architecture based on the Strategy pattern for dynamic indexing algorithm selection. The 'Table' class acts as the central coordinator, encapsulating the data structure, schema, and the selected primary index. For the graphical interface, I applied the Model-View-Controller (MVC) pattern utilizing PyQt5 signals and slots to decouple business logic from the presentation layer."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "class Table:\n    \"\"\"Primary class coordinating data structures and indexing algorithms.\"\"\"\n    \n    def __init__(self, name, columns, primary_key, page_size=4096, index_type=\"sequential\", spatial_columns=None):\n        self.name = name\n        self.columns = columns\n        self.primary_key = primary_key\n        self.page_size = page_size\n        self.index_type = index_type\n        self.spatial_columns = spatial_columns or []\n        \n        # Create primary index based on selected type (Strategy pattern)\n        self.index = self._create_index(index_type, primary_key)\n        \n        # Create additional spatial indexes if specified\n        if spatial_columns:\n            self._create_spatial_indexes()"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Custom SQL Parser"
+        },
+        {
+            "type": "text",
+            "content": "A custom SQL parser was implemented to support standard operations and the system's spatial extensions. The parser utilizes a recursive descent approach driven by complex regular expressions to interpret queries for table creation, insertion, selection, deletion, and specialized spatial lookups. This component allows users to interact with the database engine through a familiar SQL syntax extended with spatial capabilities."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "def parse_query(query):\n    \"\"\"SQL Parser with spatial query support.\"\"\"\n    query = query.strip()\n    \n    # Recognize CREATE TABLE query\n    create_match = re.match(r'(?i)CREATE\\s+TABLE\\s+([\\w_]+)\\s*\\((.+?)\\)(\\s+using\\s+index\\s+([\\w_]+)\\(([\\w_]+)\\))?', query, re.DOTALL)\n    if create_match:\n        # Process table definition...\n        \n    # Recognize spatial query\n    spatial_match = re.match(r'(?i)SELECT\\s+(.+?)\\s+FROM\\s+([\\w_]+)\\s+WHERE\\s+([\\w_]+)\\s+(WITHIN|INTERSECTS|NEAREST|IN_RANGE)\\s+\\((.+?)\\)', query)\n    if spatial_match:\n        # Process spatial query..."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Conclusions and Learnings"
+        },
+        {
+            "type": "text",
+            "content": "This project facilitated the application and deepening of advanced concepts in data structures, indexing algorithms, binary serialization, and interface development. Implementing complex algorithms like the B+ Tree from scratch significantly strengthened my understanding of these structures and their behavior with real-world data."
+        },
+        {
+            "type": "text",
+            "content": "Key challenges included performance optimization for large datasets, efficient query implementation, and designing a GUI that exposed the system's full power while maintaining an intuitive user experience. Performance testing revealed fascinating behaviors of different indexing structures under various data patterns, providing practical insights that complement theoretical knowledge."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technologies Used"
+        },
+        {
+            "type": "text",
+            "content": "• Python 3.7+: Primary development language • PyQt5: GUI framework • Shapely: Library for spatial geometry processing • RTree: Efficient implementation of spatial indexes\n• SQLite: (Used as a reference for SQL parser design) • Matplotlib: Visualization for performance analysis results"
+        }
+    ]
+}

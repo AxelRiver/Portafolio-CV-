@@ -1,0 +1,123 @@
+{
+    "title": "Diversify: Intelligent Search System with Smart Diversification",
+    "author": "César Perales",
+    "date": "December 18, 2024",
+    "skills": ["C++", "Python", "Flask", "Clustering Algorithms", "Data Processing", "Embedded Representation", "Web Frontend"],
+    "repoUrl": "https://github.com/D4rkMn/ProyectoEDA.git",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Description"
+        },
+        {
+            "type": "text",
+            "content": "Diversify is a search system that implements an advanced metric for classifying diversified results called DFM (Diversity Features Model). This project integrates diversity and clustering algorithms to deliver search results that balance relevance and variety, avoiding the typical redundancy found in conventional search engines."
+        },
+        {
+            "type": "text",
+            "content": "The system is designed with a modular architecture that includes a robust C++ backend and an interactive web interface developed with Flask and JavaScript. Diversify utilizes vector embeddings to represent content and applies various clustering algorithms to find results that are both similar and diverse relative to a given query."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/diversify-dashboard.png",
+            "alt": "Diversify Dashboard showing results and metrics",
+            "caption": "Diversify user interface with visualization of DFM metrics."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Key Features"
+        },
+        {
+            "type": "text",
+            "content": "• Generic implementation using C++ templates for maximum flexibility\n• Multiple clustering and diversity algorithms (Motley, BRID, Swap, MMR)\n• Integrated evaluation metrics to measure result quality\n• Interactive visualization of metrics such as Dunn*, Davies-Bouldin*, and Silhouette*\n• REST API for integration with other applications\n• Intuitive web interface with dynamic charts for metric visualization"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "System Architecture"
+        },
+        {
+            "type": "text",
+            "content": "The project is structured into two primary components: a powerful C++ backend that implements clustering algorithms and metric calculations, and a web frontend that allows users to interact with the system intuitively."
+        },
+        {
+            "type": "code",
+            "language": "cpp",
+            "content": "// Example implementation of a diversity algorithm (Motley)\nstd::vector<Data<T>> Motley<T>::execute(size_t k, const Data<T>& q, DataSet<T>& O,\nstd::vector<Cluster<T>>& C, DataSet<T>& query_set) {\n    \n    auto content = O.getAllData();\n    // Sort by similarity to q\n    std::sort(content.begin(), content.end(), [&q, this](const Data<T>& a, const Data<T>& b) -> bool {\n        return this->distance(a, q) < this->distance(b, q);\n    });\n\n    // Initialize result set\n    std::vector<Data<T>> R;\n    R.push_back(content[0]); \n    \n    // Select diverse elements using radius r\n    // ...\n    \n    return R;\n}"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "DFM Metrics (Diversity Features Model)"
+        },
+        {
+            "type": "text",
+            "content": "One of the most significant contributions of this project is the implementation of the DFM model, which evaluates the quality of search results based on seven complementary metrics:"
+        },
+        {
+            "type": "text",
+            "content": "• Dunn*: Measures cluster compactness and separation\n• Davies-Bouldin*: Evaluates similarity between clusters\n• Silhouette*: Calculates how well elements are grouped\n• Sigma-sim: Standard deviation of similarity\n• Sigma-div: Standard deviation of diversity\n• U-sim: Mean similarity between elements\n• U-div: Mean diversity between elements"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Implemented Algorithms"
+        },
+        {
+            "type": "text",
+            "content": "The system implements four different algorithms to diversify results, each with unique characteristics:"
+        },
+        {
+            "type": "text",
+            "content": "• Motley: Uses a medoid-based approach and a diversity radius to select elements that are diverse yet relevant.\n\n• BRID (Bidirectional Retrieval for Information Diversification): A bidirectional clustering algorithm that optimizes distances between elements.\n\n• Swap: An exchange algorithm that performs local optimization to incrementally improve diversity.\n\n• MMR (Maximal Marginal Relevance): Iterative selection with a configurable balance between relevance and diversity."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "User Interface"
+        },
+        {
+            "type": "text",
+            "content": "The Diversify web interface is designed for functionality and ease of use. It allows users to perform searches, select a diversification algorithm, and visualize both the results and quality metrics. Results are presented in an attractive format inspired by streaming platforms, while metrics are displayed in interactive charts that can toggle between radar and bar views."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/algorithm_visualizer_brin.png",
+            "alt": "Diversified search results in visualizer",
+            "caption": "Diversified search results mapped on a 2D plane."
+        },
+        {
+            "type": "text",
+            "content": "The frontend utilizes Chart.js to render dynamic charts showing the DFM metrics, enabling users to understand the quality of the results visually and directly."
+        },
+        {
+            "type": "code",
+            "language": "javascript",
+            "content": "// Code to create dynamic metrics charts\nfunction createChart(data) {\n  if (currentChart) {\n    currentChart.destroy();\n  }\n\n  const ctx = document.getElementById(\"metricsChart\").getContext(\"2d\");\n  const labels = [\n    \"Dunn*\",\n    \"DB*\",\n    \"Sil*\",\n    \"Sigma-sim\",\n    \"Sigma-div\",\n    \"U-sim\",\n    \"U-div\",\n  ];\n  let values = data || [0, 0, 0, 0, 0, 0, 0];\n\n  // Chart configuration based on selected type\n  // ...\n}"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Details"
+        },
+        {
+            "type": "text",
+            "content": "Backend:\n- C++17 for core algorithms\n- Templates for supporting various data types\n- Modular structure with classes such as Point, Data, DataSet, and Cluster\n- Metrics implemented as reusable classes"
+        },
+        {
+            "type": "text",
+            "content": "Frontend:\n- Flask for the web server\n- REST API for frontend-backend communication\n- Sentence Transformers for embedding generation\n- Chart.js for metric visualization\n- Responsive design based on modern CSS"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Conclusions"
+        },
+        {
+            "type": "text",
+            "content": "Diversify demonstrates how clustering and diversity algorithms can significantly enhance the search experience by providing results that balance similarity and variety. The DFM model offers an objective way to evaluate the quality of these results across multiple dimensions."
+        }
+    ]
+}

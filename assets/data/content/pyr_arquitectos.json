@@ -1,0 +1,73 @@
+{
+    "title": "P&R Arquitectos - Corporate Web Solutions",
+    "author": "César Perales",
+    "date": "December 15, 2024",
+    "skills": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
+    "repoUrl": "https://github.com/CdeCasurpie/pag-web-dip",
+    "demoUrl": "https://cdecasurpie.github.io/pag-web-dip/",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Overview"
+        },
+        {
+            "type": "text",
+            "content": "A professional-grade corporate platform developed for P&R Arquitectos S.R.L., a prominent architecture and engineering firm with over 20 years of industry experience. The project emphasizes modern UI/UX principles, featuring dynamic content management and strategic Conversion Rate Optimization (CRO) through integrated communication channels."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/pyr_coverImage.png",
+            "alt": "Hero Section",
+            "caption": "Homepage featuring an automated dynamic carousel."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Features"
+        },
+        {
+            "type": "text",
+            "content": "Dynamic Carousel System: A custom-engineered image transition engine supporting automatic cycles, manual overrides, touch gestures, and keyboard accessibility."
+        },
+        {
+            "type": "text",
+            "content": "JSON-Driven Portfolio Management: A modular project system that asynchronously loads data into interactive modals, allowing for scalable content updates without structural changes."
+        },
+        {
+            "type": "text",
+            "content": "Persistent Theme Architecture: Support for Dark/Light modes utilizing LocalStorage for preference persistence and CSS transitions for visual fluidity."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Architecture"
+        },
+        {
+            "type": "text",
+            "content": "Design Patterns: Developed using Object-Oriented JavaScript (ES6+), adopting a class-based architecture to separate concerns. The project follows a mobile-first, progressive enhancement strategy."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "SEO and Accessibility Standards"
+        },
+        {
+            "type": "text",
+            "content": "SEO: Semantically structured HTML5, optimized metadata, and PWA manifest implementation for enhanced search visibility."
+        },
+        {
+            "type": "text",
+            "content": "Accessibility: Strict adherence to WCAG 2.1 AA standards, including ARIA labels, keyboard focus management, and optimized contrast ratios."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "content": "This corporate solution demonstrates the effective synthesis of aesthetic design and technical performance, providing a scalable, accessible, and high-conversion platform for enterprise requirements."
+        }
+    ]
+}

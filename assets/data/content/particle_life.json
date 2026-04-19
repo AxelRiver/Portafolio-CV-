@@ -1,0 +1,88 @@
+{
+    "title": "Particle Simulation with Emergent Rules",
+    "author": "César Perales",
+    "date": "May 29, 2025",
+    "skills": ["Python", "Pygame", "Numba", "JavaScript", "HTML5 Canvas", "Algorithmic Optimization", "Physics Simulations"],
+    "repoUrl": "https://github.com/CdeCasurpie/particle_life_python_implementation.git",
+    "demoUrl": "https://cdecasurpie.github.io/particle_life_python_implementation/",
+    "content": [
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Project Overview"
+        },
+        {
+            "type": "text",
+            "content": "This project implements a compelling particle simulation where entities interact via customizable rules, resulting in complex emergent patterns. The implementation features two versions: a Python iteration utilizing Pygame with advanced optimizations through Numba, and a web-based version in JavaScript using HTML5 Canvas for broader accessibility. Both versions allow users to manipulate rule sets, observe emergent behaviors, and explore concepts related to self-organizing complex systems."
+        },
+        {
+            "type": "image",
+            "url": "/assets/images/projects/particle_life.gif",
+            "alt": "Particle Life simulation showing emergent patterns",
+            "caption": "Emergent patterns within the Particle Life simulation."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Python Implementation (app.py)"
+        },
+        {
+            "type": "text",
+            "content": "The Python version of Particle Life leverages Pygame for visualization and is highly optimized using Numba—a Just-In-Time (JIT) compilation library that significantly accelerates numerical computations. This version includes advanced features such as calculation parallelization, an infinite toroidal world, zoom-capable camera controls, and an automated parameter exploration system to discover unique configurations."
+        },
+        {
+            "type": "code",
+            "language": "python",
+            "content": "@jit(nopython=True, parallel=True)\ndef compute_forces(atoms, rules_array, radii2_array, num_colors, time_scale, viscosity, wall_repel, width, height, camera_x, camera_y):\n    \"\"\"Compute all forces utilizing Numba for accelerated calculation\"\"\"\n    n = len(atoms)\n    fx_array = np.zeros(n)\n    fy_array = np.zeros(n)\n    \n    # Force calculation logic\n    for i in prange(n):\n        # Optimized code for particle-to-particle interaction calculation"
+        },
+        {
+            "type": "text",
+            "content": "The Python version utilizes multi-core processing to maximize throughput, enabling the real-time simulation of thousands of particles with complex interactions. It also features a sophisticated control system for real-time parameter tuning, allowing users to modify interaction rules and explore various configurations through intuitive keyboard commands."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Web Implementation (index.html)"
+        },
+        {
+            "type": "text",
+            "content": "The web version translates the simulation into JavaScript and HTML5 Canvas, ensuring accessibility across modern browsers without installation. This implementation preserves core features of the Python version but is optimized for web performance, employing techniques such as grid-based collision detection and efficient canvas management to ensure fluid simulations on resource-constrained devices."
+        },
+        {
+            "type": "code",
+            "language": "javascript",
+            "content": "// Example of adaptive performance optimization in the web version\nif (settings.fps < 30 && atoms.length > 200) {\n  if (frameCount % 120 === 0) { // Evaluation every 120 frames\n    atoms = atoms.slice(0, Math.floor(atoms.length * 0.9));\n    console.log(`Reduced particles to ${atoms.length} for optimized performance`);\n  }\n}"
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Technical Challenges Overcome"
+        },
+        {
+            "type": "text",
+            "content": "This project addressed several significant technical challenges. Implementing a particle system with N-body interactions required optimizing algorithms to mitigate O(n²) complexity. Developing an infinite toroidal world with particle duplication at boundaries provided a seamless visual experience. Additionally, the implemented zoomable camera system allowed for the observation of both macroscopic patterns and detailed microscopic interactions."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Key Learnings and Developed Skills"
+        },
+        {
+            "type": "text",
+            "content": "This project represents a significant advancement in scientific programming and algorithmic optimization. The Python implementation with Numba demonstrates a deep understanding of parallelization and numerical optimization techniques, while the web version showcases the ability to port complex algorithms across platforms. The project integrates computational physics, efficient data structures, and interactive visualization techniques."
+        },
+        {
+            "type": "text",
+            "content": "Beyond technical mastery, creating this simulation deepened my understanding of complex systems and emergent behaviors. Working with simple rules that generate sophisticated outcomes provides a valuable perspective on fundamental principles found in natural and artificial systems, from biological pattern formation to social dynamics."
+        },
+        {
+            "type": "header",
+            "level": 2,
+            "content": "Impact and Applicability"
+        },
+        {
+            "type": "text",
+            "content": "This project has direct educational applications for teaching concepts of complexity and particle dynamics. The dual implementation demonstrates technical versatility and consideration for different target audiences. Furthermore, the optimization techniques employed are transferable to other computationally intensive domains, ranging from scientific simulations to game development and artificial intelligence."
+        }
+    ]
+}
